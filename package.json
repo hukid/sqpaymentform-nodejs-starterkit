@@ -1,0 +1,13 @@
+{
+  "name": "sqpaymentform-nodejs-starterkit",
+  "version": "0.0.0",
+  "private": true,
+  "scripts": {
+    "start": "node app.js"
+  },
+  "dependencies": {
+    "body-parser": "*",
+    "express": "*",
+    "square-connect": "^2.20190508.0"
+  }
+}

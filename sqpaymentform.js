@@ -1,10 +1,6 @@
 // Set the application ID
 var applicationId = "REPLACE_ME";
 
-// Set the location ID
-var locationId = "REPLACE_ME";
-
-
 function buildForm(form) {
   if (SqPaymentForm.isSupportedBrowser()) {
     form.build();
@@ -35,7 +31,6 @@ var paymentForm = new SqPaymentForm({
 
   // Initialize the payment form elements
   applicationId: applicationId,
-  locationId: locationId,
   inputClass: 'sq-input',
   autoBuild: false,
 

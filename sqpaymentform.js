@@ -37,7 +37,7 @@ var paymentForm = new SqPaymentForm({
   applicationId: applicationId,
   locationId: locationId,
   inputClass: 'sq-input',
-  autoBuild: false,
+  autoBuild: true,
 
   // Customize the CSS for SqPaymentForm iframe elements
   inputStyles: [{

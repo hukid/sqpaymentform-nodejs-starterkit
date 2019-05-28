@@ -4,8 +4,10 @@ const squareConnect = require('square-connect');
 
 const app = express();
 const port = 3000;
-const accessToken = 'REPLACE_ME';
-const locationId = 'REPLACE_ME';
+
+// Set the Access Token and Location Id
+const accessToken = 'REPLACE_WITH_ACCESS_TOKEN';
+const locationId = 'REPLACE_WITH_LOCATION_ID';
 
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
@@ -18,7 +20,7 @@ const defaultClient = squareConnect.ApiClient.instance;
 const oauth2 = defaultClient.authentications['oauth2'];
 oauth2.accessToken = accessToken;
 
-app.post('/process-payment', function(req,res,next){
+app.post('/process-payment', function(req, res){
   const request_params = req.body;
 
   const idempotency_key = require('crypto').randomBytes(64).toString('hex');
@@ -47,4 +49,7 @@ app.post('/process-payment', function(req,res,next){
   });
 });
 
-app.listen(port, () => console.log(`listening on - http://localhost:${port}`))
+app.listen(
+  port,
+  () => console.log(`listening on - http://localhost:${port}`)
+);
